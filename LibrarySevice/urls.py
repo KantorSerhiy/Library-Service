@@ -25,4 +25,5 @@ router.registry.extend(book.registry)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
+    path("api/users/", include("Users.urls", namespace="Users")),
 ]

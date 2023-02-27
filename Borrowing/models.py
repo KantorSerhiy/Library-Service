@@ -10,3 +10,6 @@ class Borrowing(models.Model):
     actual_return_date = models.DateField(blank=True, null=True)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.book}: {self.borrow_date} - {self.expected_return_date}."

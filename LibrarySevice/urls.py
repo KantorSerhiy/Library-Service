@@ -18,9 +18,11 @@ from django.urls import path, include
 from rest_framework import routers
 
 from BooksService.urls import router as book
+from Borrowing.urls import router as borrowing
 
 router = routers.DefaultRouter()
 router.registry.extend(book.registry)
+router.registry.extend(borrowing.registry)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
